@@ -2,7 +2,7 @@ FROM tomcat:8.0-alpine
 
 LABEL maintainer=”sivaprasad.nages@aspiresys.com”
 
-ADD webapp.war /usr/local/tomcat/webapps/
+ADD ./webapp.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 
