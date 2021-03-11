@@ -7,14 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <title>Test JSP</title>
+    
+    
 </head>
 <body>
-Test JSP Page inside WEB-INF folder.<br>
-Init Param "test" value =<%=config.getInitParameter("test") %><br>
-HashCode of this object=<%=this.hashCode() %>
-</body>
-</html>
-
 <h1> Hello, Welcome to Aspire Systems !!! </h1>
 <h2> JAVA APP Deploying on Kubernetes </h2>
 <h3> Stages : /n
@@ -23,3 +19,7 @@ HashCode of this object=<%=this.hashCode() %>
 3. code build /n
 4. containerisation /n
 5.deployement </h3>
+</body>
+</html>
+
+
