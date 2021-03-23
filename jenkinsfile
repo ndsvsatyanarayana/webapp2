@@ -1,0 +1,42 @@
+pipeline{
+        agent any  
+        tools {
+        maven 'maven1'
+        jdk 'java8'
+         }    
+        stages{
+              stage('scm checkout') {
+                  steps{
+                      git 'https://github.com/Sivagit120/webapp.git'
+                       }
+                 }
+
+              stage('SonarQube code Analysis'){
+                   steps{
+                    
+                        sh "mvn sonar:sonar -Dsonar.projectKey=mvn -Dsonar.host.url=http://15.207.254.95 -Dsonar.login=f2b91d858d78af4cf23ad1c502ab42464206a09f"
+                           
+                        }
+                    }  
+              stage('Maven build'){
+                   steps{
+                                          
+                           sh 'mvn clean package'
+                           
+                        }
+                    }
+            stage('Docker build'){
+                   steps{
+                            
+                            sh 'sudo docker rmi -f mywebapp'
+                            sh 'sudo rm -rf webapp.war'
+                            sh 'sudo cp /var/lib/jenkins/workspace/webapp/webapp/target/webapp.war  /var/lib/jenkins/workspace/webapp/'
+                            sh 'pwd'
+                           sh 'sudo docker build -t mywebapp:latest .'
+                           
+                        }
+                    }        
+
+              }
+        }
+    
