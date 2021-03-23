@@ -7,14 +7,14 @@ pipeline{
         stages{
               stage('scm checkout') {
                   steps{
-                      git 'https://github.com/Sivagit120/webapp.git'
+                      git 'https://github.com/Sivagit120/webapp2.git'
                        }
                  }
 
               stage('SonarQube code Analysis'){
                    steps{
                     
-                        sh "mvn sonar:sonar -Dsonar.projectKey=mvn -Dsonar.host.url=http://15.207.254.95 -Dsonar.login=f2b91d858d78af4cf23ad1c502ab42464206a09f"
+                        sh "mvn sonar:sonar -Dsonar.projectKey=webapp2 -Dsonar.host.url=http://15.207.254.95 -Dsonar.login=5ddfb5f7f6f7ac85923cb7c45f7026d562095b6d"
                            
                         }
                     }  
