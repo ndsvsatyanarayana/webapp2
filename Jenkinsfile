@@ -30,7 +30,7 @@ pipeline{
                             
                             sh 'sudo docker rmi -f mywebapp'
                             sh 'sudo rm -rf webapp.war'
-                            sh 'sudo cp /var/lib/jenkins/workspace/webapp/webapp/target/webapp.war  /var/lib/jenkins/workspace/webapp/'
+                            sh 'sudo cp /var/lib/jenkins/workspace/webapp_jenkinsfile/webapp/target/webapp.war  /var/lib/jenkins/workspace/webapp_jenkinsfile'
                             sh 'pwd'
                            sh 'sudo docker build -t mywebapp:latest .'
                            
