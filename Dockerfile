@@ -1,12 +1,8 @@
-FROM tomcat:8.0-alpine
+FROM tomcat:8.5.47-jdk8-openjdk
 
 LABEL maintainer=”sivaprasad.nages@aspiresys.com”
 
-ADD ./webapp.war /usr/local/tomcat/webapps/
-
-EXPOSE 8080
-
-CMD [“catalina.sh”, “run”]
+COPY ./webapp.war /usr/local/tomcat/webapps
 
 
 
